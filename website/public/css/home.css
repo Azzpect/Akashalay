@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-style: sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: url('/public/images/bg.jpg') no-repeat center center/cover;
+    overflow-x: hidden;
+}
+/* navbar style */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 13vh;
+}
+.web-name {
+    color: white;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+}
+.nav-item {
+    color: white;
+    font-size: 18px;
+    list-style: none;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+.nav-item span {
+    color: white;
+    font-size: 18px;
+    list-style: none;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+.nav-item:hover {
+    font-size: 20px;
+}
+.arrow {
+    color: white; 
+    transform: rotateX(0deg);
+    transition: all 0.3s linear;
+}
+.option-list {
+    width: 10vw;
+    position: absolute;
+    display: none;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 10;
+    transition: all 0.5s linear;
+}
+.moons-options {
+    top: 10%;
+    left: 48%;
+}
+.spacemissions-options {
+    top: 10%;
+    left: 63%;
+}
+.show-options {
+    display: block;
+}
+.option-item {
+    list-style: none;
+    padding: 10% 20%;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+}
+.option-item:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.option-item a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+
+/* planets and info container styles */
+.planet {
+    cursor: pointer;
+}
+#sun {
+    width: 525px;
+    height: 525px;
+    position: absolute;
+    top: 20%;
+    right: -26%;
+}
+#mercury {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 14%;
+    right: 11%;
+}
+#venus {
+    width: 63px;
+    height: 60px;
+    position: absolute;
+    top: 20%;
+    right: 16%;
+}
+#earth {
+    width: 67px;
+    height: 65px;
+    position: absolute;
+    top: 45%;
+    right: 25%;
+}
+#mars {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 26%;
+    right: 34%;
+}
+#jupiter {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    right: 45%;
+}
+#saturn {
+    width: 270px;
+    height: 150px;
+    position: absolute;
+    top: 10%;
+    right: 60%;
+}
+#uranus {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 40%;
+    right: 75%;
+}
+#neptune {
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: 75%;
+    right: 88%;
+}
