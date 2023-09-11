@@ -12,6 +12,8 @@
         let planetName = window.location.href.split("x:")[1]
         document.getElementById("planet-name").innerHTML = planetName
         document.querySelector('title').innerHTML = `Akashalay - ${planetName.toUpperCase()}`
+        let body = document.querySelector('body')
+        body.style.setProperty('--bg-img', `url('/public/images/${planetName}-bg.jpg')`)
     </script>
     <script src="/public/script/fetch.js"></script>
 </body>
