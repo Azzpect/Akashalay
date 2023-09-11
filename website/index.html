@@ -42,31 +42,58 @@
     </header>
     <section class="solar-system">
         <a href="/star/x:sun">
-            <img src="/public/images/sun2.png" alt="Sun" id="sun" class="planet">
+            <div id="sun-container" class="planet-container">
+                <img src="/public/images/sun2.png" alt="Sun" id="sun" class="planet">
+                <!-- <h3 class="planet-name" id="sun-name">Sun</h3> -->
+            </div>
         </a>
         <a href="/planet/x:mercury">
-            <img src="/public/images/mercury.png" alt="Mercury" id="mercury" class="planet">
+            <div id="mercury-container" class="planet-container">
+                <img src="/public/images/mercury.png" alt="Mercury" id="mercury" class="planet">
+                <h3 class="planet-name" id="mercury-name">Mercury</h3>
+            </div>
         </a>
         <a href="/planet/x:venus">
-            <img src="/public/images/venus.png" alt="Venus" id="venus" class="planet">
+            <div id="venus-container" class="planet-container">
+                <img src="/public/images/venus.png" alt="Venus" id="venus" class="planet">
+                <h3 class="planet-name" id="venus-name">Venus</h3>
+            </div>
         </a>
-        <a href="/planet/x:earth">
-            <img src="/public/images/earth.png" alt="Earth" id="earth" class="planet">
+        <a href="/planet/x:earth" style="color: white;">
+            <div id="earth-container" class="planet-container">
+                <img src="/public/images/earth.png" alt="Earth" id="earth" class="planet">
+                <h3 class="planet-name" id="earth-name">Earth</h3>
+            </div>
         </a>
         <a href="/planet/x:mars">
-            <img src="/public/images/mars.png" alt="Mars" id="mars" class="planet">
+            <div id="mars-container" class="planet-container">
+                <img src="/public/images/mars.png" alt="Mars" id="mars" class="planet">
+                <h3 class="planet-name" id="mars-name">Mars</h3>
+            </div>
         </a>
         <a href="/planet/x:jupiter">
-            <img src="/public/images/jupiter.png" alt="Jupiter" id="jupiter" class="planet">
+            <div id="jupiter-container" class="planet-container">
+                <img src="/public/images/jupiter.png" alt="Jupiter" id="jupiter" class="planet">
+                <h3 class="planet-name" id="jupiter-name">Jupiter</h3>
+            </div>
         </a>
         <a href="/planet/x:saturn">
-            <img src="/public/images/saturn.png" alt="Saturn" id="saturn" class="planet">
+            <div id="saturn-container" class="planet-container">
+                <img src="/public/images/saturn.png" alt="Saturn" id="saturn" class="planet">
+                <h3 class="planet-name" id="saturn-name">Saturn</h3>
+            </div>
         </a>
-        <a href="/planet/x:uranus">
-            <img src="/public/images/uranus.png" alt="Uranus" id="uranus" class="planet">
+        <a href="/planet/x:uranus" style="color: white;">
+            <div id="uranus-container" class="planet-container">
+                <img src="/public/images/uranus.png" alt="Uranus" id="uranus" class="planet">
+                <h3 class="planet-name" id="uranus-name">Uranus</h3>
+            </div>
         </a>
         <a href="/planet/x:neptune">
-            <img src="/public/images/neptune.png" alt="Neptune" id="neptune" class="planet">
+            <div id="neptune-container" class="planet-container">
+                <img src="/public/images/neptune.png" alt="Neptune" id="neptune" class="planet">
+                <h3 class="planet-name" id="neptune-name">Neptune</h3>
+            </div>
         </a>
     </section>
     <script>
@@ -94,6 +121,21 @@
                 return angle
             }
         }
+    </script>
+    <script>
+        let planets = document.querySelectorAll('.planet')
+        planets.forEach(planet => {
+            planet.addEventListener('mouseover', () => {
+                let planetName = planet.getAttribute('id')
+                document.getElementById(`${planetName}-name`).classList.toggle('planet-name-show')
+            })
+
+            planet.addEventListener('mouseout', () => {
+            let planetName = planet.getAttribute('id')
+            document.getElementById(`${planetName}-name`).classList.toggle('planet-name-show')
+            })
+            
+        })
     </script>
 </body>
 </html>

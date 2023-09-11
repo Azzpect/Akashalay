@@ -90,9 +90,26 @@ header {
 .planet {
     cursor: pointer;
 }
+.planet-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.planet-name {
+    color: white;
+    display: none;
+    text-decoration: underline;
+    font-family: 'Cormorant Garamond', serif;
+}
+.planet-name-show {
+    display: block;
+}
 #sun {
     width: 1000px;
     height: 550px;
+}
+#sun-container {
     position: absolute;
     top: 15%;
     right: -45%;
@@ -100,56 +117,65 @@ header {
 #mercury {
     width: 25px;
     height: 25px;
-    position: absolute;
+}
+#mercury-container {
+    width: 100px;
     top: 14%;
-    right: 11%;
+    right: 6%;
 }
 #venus {
     width: 63px;
     height: 60px;
-    position: absolute;
+}
+#venus-container {
     top: 20%;
     right: 16%;
 }
 #earth {
     width: 67px;
     height: 65px;
-    position: absolute;
+}
+#earth-container {
     top: 45%;
     right: 25%;
 }
 #mars {
     width: 60px;
     height: 60px;
-    position: absolute;
+}
+#mars-container {
     top: 26%;
     right: 34%;
 }
 #jupiter {
     width: 180px;
     height: 180px;
-    position: absolute;
+}
+#jupiter-container {
     top: 50%;
     right: 45%;
 }
 #saturn {
     width: 270px;
     height: 150px;
-    position: absolute;
+}
+#saturn-container {
     top: 10%;
     right: 60%;
 }
 #uranus {
     width: 160px;
     height: 160px;
-    position: absolute;
+}
+#uranus-container {
     top: 40%;
     right: 75%;
 }
 #neptune {
     width: 140px;
     height: 140px;
-    position: absolute;
-    top: 75%;
+}
+#neptune-container {
+    top: 70%;
     right: 88%;
 }
