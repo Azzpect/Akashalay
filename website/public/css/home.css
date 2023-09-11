@@ -91,11 +91,11 @@ header {
     cursor: pointer;
 }
 #sun {
-    width: 525px;
-    height: 525px;
+    width: 1000px;
+    height: 550px;
     position: absolute;
-    top: 20%;
-    right: -26%;
+    top: 15%;
+    right: -45%;
 }
 #mercury {
     width: 25px;
