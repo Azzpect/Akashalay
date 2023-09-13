@@ -7,13 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>This is <span id="planet-name"></span> page</h2>
+    <div class="intro-portion">
+        <h2 id="planet-name"></h2>
+        <img src="" alt="" class="planet-img">
+    </div>
+    <hr class="divider">
     <script>
         let planetName = window.location.href.split("x:")[1]
-        document.getElementById("planet-name").innerHTML = planetName
+        let planet_img = document.querySelector('.planet-img')
+        document.getElementById("planet-name").innerHTML = planetName.toUpperCase()
+        planet_img.src = `/public/images/${planetName}.png`
+        if(planetName == "saturn")
+            planet_img.style.width = "550px"
+        if(planetName == "sun")
+            planet_img.style.width = "550px"
         document.querySelector('title').innerHTML = `Akashalay - ${planetName.toUpperCase()}`
-        let body = document.querySelector('body')
-        body.style.setProperty('--bg-img', `url('/public/images/${planetName}-bg.jpg')`)
     </script>
     <script src="/public/script/fetch.js"></script>
 </body>
