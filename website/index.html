@@ -41,55 +41,55 @@
         </nav>
     </header>
     <section class="solar-system">
-        <a href="/star/x:sun">
+        <a onclick="redirect(this)" category="star">
             <div id="sun-container" class="planet-container">
                 <img src="/public/images/sun.png" alt="Sun" id="sun" class="planet">
-                <!-- <h3 class="planet-name" id="sun-name">Sun</h3> -->
+                <h3 class="planet-name" id="sun-name">Sun</h3>
             </div>
         </a>
-        <a href="/planet/x:mercury">
+        <a onclick="redirect(this)" category="planet">
             <div id="mercury-container" class="planet-container">
                 <img src="/public/images/mercury.png" alt="Mercury" id="mercury" class="planet">
                 <h3 class="planet-name" id="mercury-name">Mercury</h3>
             </div>
         </a>
-        <a href="/planet/x:venus">
+        <a onclick="redirect(this)" category="planet">
             <div id="venus-container" class="planet-container">
                 <img src="/public/images/venus.png" alt="Venus" id="venus" class="planet">
                 <h3 class="planet-name" id="venus-name">Venus</h3>
             </div>
         </a>
-        <a href="/planet/x:earth" style="color: white;">
+        <a onclick="redirect(this)" category="planet" style="color: white;">
             <div id="earth-container" class="planet-container">
                 <img src="/public/images/earth.png" alt="Earth" id="earth" class="planet">
                 <h3 class="planet-name" id="earth-name">Earth</h3>
             </div>
         </a>
-        <a href="/planet/x:mars">
+        <a onclick="redirect(this)" category="planet">
             <div id="mars-container" class="planet-container">
                 <img src="/public/images/mars.png" alt="Mars" id="mars" class="planet">
                 <h3 class="planet-name" id="mars-name">Mars</h3>
             </div>
         </a>
-        <a href="/planet/x:jupiter">
+        <a onclick="redirect(this)" category="planet">
             <div id="jupiter-container" class="planet-container">
                 <img src="/public/images/jupiter.png" alt="Jupiter" id="jupiter" class="planet">
                 <h3 class="planet-name" id="jupiter-name">Jupiter</h3>
             </div>
         </a>
-        <a href="/planet/x:saturn">
+        <a onclick="redirect(this)" category="planet">
             <div id="saturn-container" class="planet-container">
                 <img src="/public/images/saturn.png" alt="Saturn" id="saturn" class="planet">
                 <h3 class="planet-name" id="saturn-name">Saturn</h3>
             </div>
         </a>
-        <a href="/planet/x:uranus" style="color: white;">
+        <a onclick="redirect(this)" category="planet" style="color: white;">
             <div id="uranus-container" class="planet-container">
                 <img src="/public/images/uranus.png" alt="Uranus" id="uranus" class="planet">
                 <h3 class="planet-name" id="uranus-name">Uranus</h3>
             </div>
         </a>
-        <a href="/planet/x:neptune">
+        <a onclick="redirect(this)" category="planet">
             <div id="neptune-container" class="planet-container">
                 <img src="/public/images/neptune.png" alt="Neptune" id="neptune" class="planet">
                 <h3 class="planet-name" id="neptune-name">Neptune</h3>
@@ -134,8 +134,23 @@
             let planetName = planet.getAttribute('id')
             document.getElementById(`${planetName}-name`).classList.toggle('planet-name-show')
             })
-            
         })
+        function redirect(element) {
+            const entityName = element.childNodes[1].childNodes[3].innerHTML.toLowerCase()
+            const category =  element.getAttribute("category")
+
+            const queryString = window.location.search
+            const urlParam = new URLSearchParams(queryString)
+            let newURL
+            urlParam.set('name', entityName)
+            if(category == "planet") {
+                newURL = window.location.pathname + 'planet/?' + urlParam.toString()
+            }
+            else if(category == "star") {
+                newURL = window.location.pathname + 'star/?' + urlParam.toString()
+            }
+            window.location.href = newURL
+        }
     </script>
 </body>
 </html>
