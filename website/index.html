@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/home.css">
-    <!-- font style links  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <script defer src="/public/script/navbar_option.js"></script>
     <!-- icons link -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Akashalay</title>
@@ -96,32 +93,6 @@
             </div>
         </a>
     </section>
-    <script>
-        function rotate(element) {
-            let arrow = element.childNodes[1]
-            let angle = getRotation(arrow)
-            arrow.style.transform = `rotate(${angle + 180}deg)`
-            let option_list = element.childNodes[0].innerHTML.toLowerCase()
-            getRotation(arrow)
-            document.querySelector(`.${option_list}-options`).classList.toggle('show-options')
-        }
-        function getRotation(element) {
-            let st = window.getComputedStyle(element, null)
-            let tr = st.getPropertyValue('-webkit-transform') ||
-                    st.getPropertyValue('-moz-transform') ||
-                    st.getPropertyValue('-ms-transform') ||
-                    st.getPropertyValue('-o-transform') ||
-                    st.getPropertyValue('transform') ||
-                    null
-            if(tr) {
-                let values = tr.split('(')[1].split(')')[0].split(',')
-                let cosX = values[0]
-                let sinX = values[1]
-                let angle = Math.round(Math.atan2(sinX, cosX) * (180/Math.PI))
-                return angle
-            }
-        }
-    </script>
     <script>
         let planets = document.querySelectorAll('.planet')
         planets.forEach(planet => {

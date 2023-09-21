@@ -7,10 +7,85 @@
 }
 body {
     width: 100vw;
-    background-image: url("/public/images/bg.jpg");
-    background-repeat: repeat-y;
+    /* background-image: url("/public/images/bg.jpg");
+    background-repeat: repeat-y; */
+    background-color: black;
     overflow-x: hidden;
 }
+/* header style */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 13vh;
+}
+.web-name {
+    color: white;
+    cursor: pointer;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+}
+.nav-item {
+    color: white;
+    font-size: 18px;
+    list-style: none;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+.nav-item span {
+    color: white;
+    font-size: 18px;
+    list-style: none;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+.nav-item:hover {
+    font-size: 20px;
+}
+.arrow {
+    color: white; 
+    transform: rotateX(0deg);
+    transition: all 0.3s linear;
+}
+.option-list {
+    width: 13vw;
+    position: absolute;
+    display: none;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 10;
+    transition: all 0.5s linear;
+}
+.moons-options {
+    top: 10%;
+    left: 48%;
+}
+.spacemissions-options {
+    top: 10%;
+    left: 63%;
+}
+.show-options {
+    display: block;
+}
+.option-item {
+    list-style: none;
+    padding: 10% 20%;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+}
+.option-item:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.option-item a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+/* section style  */
 
 .intro-container {
     display: flex;
@@ -56,5 +131,9 @@ body {
 }
 .para-heading {
     font-size: 1.3rem;
+    text-decoration: underline;
+}
+.para-sub-heading {
+    font-size: 1.1rem;
     text-decoration: underline;
 }
