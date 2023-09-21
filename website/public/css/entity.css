@@ -7,22 +7,54 @@
 }
 body {
     width: 100vw;
-    height: 100vh;
     background-image: url("/public/images/bg.jpg");
+    background-repeat: repeat-y;
+    overflow-x: hidden;
 }
 
-.intro-portion {
+.intro-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100vw;
     height: 50vh;
 }
+.intro {
+    display: flex;
+    flex-direction: column;
+}
+#planet-name {
+    text-decoration: underline;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+.short-desc {
+    width: 40vw;
+    text-align: justify;
+    letter-spacing: 1px;
+}
 .planet-img {
     width: 300px;
     height: 300px;
+    transform: translateX(100%);
+    transition: all 2s;
+}
+.show-img {
+    transform: translateX(-35%);
 }
 .divider {
     width: 85vw;
     margin: auto;
+}
+.full-desc {
+    /* border: 1px solid white; */
+    text-align: justify;
+    letter-spacing: 1px;
+    width: 80vw;
+    padding: 3% 1%;
+    margin: 5% auto;
+}
+.para-heading {
+    font-size: 1.3rem;
+    text-decoration: underline;
 }

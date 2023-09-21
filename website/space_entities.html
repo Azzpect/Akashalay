@@ -3,28 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/home.css">
     <link rel="stylesheet" href="/public/css/entity.css">
     <title>Document</title>
+    <script defer src="/public/script/script.js"></script>
 </head>
 <body>
-    <div class="intro-portion">
-        <h2 id="planet-name"></h2>
+    <header>
+        <h1 class="web-name primary-heading">AKASHALAY</h1>
+        <nav class="navbar">
+            <li href="" class="nav-item">Home</li>
+            <li href="" class="nav-item" onclick="rotate(this)"><span>Moons</span><i class='bx bxs-down-arrow arrow'></i>
+            </li>
+            <div class="option-list moons-options">
+                <li class="option-item"><a href="">Earth(1)</a></li>
+                <li class="option-item"><a href="">Mars(2)</a></li>
+                <li class="option-item"><a href="">Jupiter(95)</a></li>
+                <li class="option-item"><a href="">Saturn(146)</a></li>
+                <li class="option-item"><a href="">Uranus(27)</a></li>
+                <li class="option-item"><a href="">Neptune(14)</a></li>
+            </div>
+            <li href="" class="nav-item" onclick="rotate(this)"><span>SpaceMissions</span><i class='bx bxs-down-arrow arrow'"></i></li>
+            <div class="option-list spacemissions-options">
+                <li class="option-item"><a href="">Earth(1)</a></li>
+                <li class="option-item"><a href="">Mars(2)</a></li>
+                <li class="option-item"><a href="">Jupiter()</a></li>
+                <li class="option-item"><a href="">Saturn()</a></li>
+                <li class="option-item"><a href="">Uranus()</a></li>
+                <li class="option-item"><a href="">Neptune()</a></li>
+            </div>
+            <li href="" class="nav-item">About Us</li>
+            <li href="" class="nav-item">Contact Us</li>
+        </nav>
+    </header>
+    <div class="intro-container">
+        <div class="intro">
+            <h2 id="planet-name"></h2>
+            <p class="short-desc"></p>
+        </div>
         <img src="" alt="" class="planet-img">
     </div>
     <hr class="divider">
-    <script>
-        const queryString = window.location.search
-        const urlParam = new URLSearchParams(queryString)
-        const planetName = urlParam.get('name')
-        const planet_img = document.querySelector('.planet-img')
-        document.getElementById("planet-name").innerHTML = planetName.toUpperCase()
-        planet_img.src = `/public/images/${planetName}.png`
-        if(planetName == "saturn")
-            planet_img.style.width = "550px"
-        if(planetName == "sun")
-            planet_img.style.width = "550px"
-        document.querySelector('title').innerHTML = `Akashalay - ${planetName.toUpperCase()}`
-    </script>
-    <script src="/public/script/fetch.js"></script>
+    <p class="full-desc"></p>
 </body>
 </html>
